@@ -2,9 +2,9 @@
 
 **к книжному магазину ЛитРес**
 
-Версия документа: 1.85
+Версия документа: 1.88
 
-Дата последнего обновления: 12 августа 2015 г.
+Дата последнего обновления: 15 октября 2015 г.
 
 Ответственные: Грибов Дмитрий
 ([admin@litres.ru](mailto:admin@litres.ru)) и Пономаренко Илья
@@ -198,14 +198,14 @@
 обозначено обратное):
 
 -   **checkpoint** – время в формате ISO (например, 2015-11-05
-    14:44:34), с которого следует забирать новинки. Вы получите список
+    14:48:53), с которого следует забирать новинки. Вы получите список
     новинок со временем большим или равным **checkpoint** и меньшим
     **/****fb****-****updates****/@****timestamp** (см. описание XML
     ниже). Если вы хотите получать непрерывную ленту новинок, сохраняйте
     отданный вам сервером **/****fb****-****updates****/@****timestamp**
     и в следующий раз используйте его в качестве **checkpoint**. Для
     получения полной базы (при первоначальной загрузке) используйте
-    чекпойнт 2010-05-16;
+    чекпойнт «2013-01-01 00:00:00»;
 
 -   **place** – ID партнера. Обычно это четырехбуквенный код, который
     выдается партнеру при заключении договора (см. );
@@ -316,7 +316,7 @@ last\_release="2008-08-05 12:31:10" updated="2008-08-05 12:31:10"
 valid\_till="2010-01-01 00:00:00" valid\_from="2007-04-09 00:00:00"
 size="94789" sent\_by\_name="busya" sent\_by\_id="20" must\_import="0"
 options="67" price="9.05" you\_can\_sell="0" allow\_read="1"
-allow\_sell="2" allow\_full\_free="0" public\_domain="0" has\_trial="1"
+allow\_sell="2" allow\_full\_free="0" public\_domain="0"
 external\_id="33b10c47-7369-4702-8d8b-f98fedf05798" cover="jpg" type="0"
 adult="0" file\_parts="20" wap\_parts="30" contract\_ends="2014-04-05"
 chars="141371" images="1" isbn="978-5-425-04925-4"
@@ -424,16 +424,15 @@ uuid="6271d19d-5b5b-11e4-96e2-0025905a06ea" number="3"/\>
 updated="2012-10-26 17:28:18" valid\_till="2014-07-01"
 valid\_from="2010-10-01" size="486144" sent\_by\_name="palek"
 sent\_by\_id="32" must\_import="0" options="70" price="149.00"
-you\_can\_sell="0" allow\_read="0" allow\_sell="2" has\_trial="4"
-allow\_full\_free="0" public\_domain="0" show\_card="64"
-contract\_author="119123" contract\_title="Аудиокнига (АСТ) (аудио)"
-subject\_id="64068" file\_id="4895525"
-external\_id="54b86e0e-a05e-11e1-aac2-5924aae99221" cover="jpg" type="1"
-litres\_isbn="978-5-457-58213-2" first\_time\_sale="2012-05-28 11:32:48"
-adult="0" file\_parts="0" wap\_parts="0" available="1"
-available\_date="2012-10-26 17:28:09" copyright\_read\_online="0"
-contract\_ends="2014-07-01" art\_cover="jpg" lvl="5" chars="28305" 
-url="masha-traub/semeynaya-kuhnya-2/"\>
+you\_can\_sell="0" allow\_read="0" allow\_sell="2" allow\_full\_free="0"
+public\_domain="0" show\_card="64" contract\_author="119123"
+contract\_title="Аудиокнига (АСТ) (аудио)" subject\_id="64068"
+file\_id="4895525" external\_id="54b86e0e-a05e-11e1-aac2-5924aae99221"
+cover="jpg" type="1" litres\_isbn="978-5-457-58213-2"
+first\_time\_sale="2012-05-28 11:32:48" adult="0" file\_parts="0"
+wap\_parts="0" available="1" available\_date="2012-10-26 17:28:09"
+copyright\_read\_online="0" contract\_ends="2014-07-01" art\_cover="jpg"
+lvl="5" chars="28305"  url="masha-traub/semeynaya-kuhnya-2/"\>
 
 \<files\>
 
@@ -664,13 +663,6 @@ removed="2008-07-08 13:34:13"/\>
 
 -   **updated****-****book****/@file\_id** - id текущего файла книги в
     системе. Необходим при извлечении обложки;
-
--   **updated****-****book****/@has\_trial** – показывает, доступен ли
-    ознакомительный файл для этой книги и разрешено ли партнеру этот
-    ознакомительный фрагмент отдавать пользователям (**1** – доступен;
-    **0** – не доступен). Ознакомительный файл для многих книг может
-    быть скачан даже при нулевом
-    **@****you****\_****can****\_****sell**;
 
 -   **updated****-****book****/@****size** – размер ZIP-файла с книгой
     (в байтах);
@@ -1905,20 +1897,20 @@ tester.litres.ru, а также секретный ключ
 
 -   Тестовый URL на запрос уже купленной книги:
 
-[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?place=TEST&user=1&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a](http://tester.litres.ru/partner_user_purchases_a_book/?place=TEST&user=1&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a)
+[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?user=1&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a](http://tester.litres.ru/partner_user_purchases_a_book/?user=1&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a)
 
 -   Запрос с некорректным MD5:
 
-[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?place=TEST&user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a](http://tester.litres.ru/partner_user_purchases_a_book/?place=TEST&user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a)
+[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a](http://tester.litres.ru/partner_user_purchases_a_book/?user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=317bff5f410c2a3b90ffd9d8ad990f9a)
 
 -   Запрос на покупку книги пользователем 2, который в целях
     тестирования всегда отрабатывает успешно:
 
-[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?place=TEST&user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=1cbef90cf0e91e0eebe1a292a244b191](http://tester.litres.ru/partner_user_purchases_a_book/?place=TEST&user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=1cbef90cf0e91e0eebe1a292a244b191)
+[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=1cbef90cf0e91e0eebe1a292a244b191](http://tester.litres.ru/partner_user_purchases_a_book/?user=2&art=65830123-26b8-4b07-8098-c18229e5026e&md5=1cbef90cf0e91e0eebe1a292a244b191)
 
 -   Запрос на книгу, которая недоступна партнеру:
 
-[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?place=TEST&user=2&art=65930123-26b8-4b07-8098-c18229e5026e&md5=92dd1dd18c29ac397054ac07ca08135d](http://tester.litres.ru/partner_user_purchases_a_book/?place=TEST&user=2&art=65930123-26b8-4b07-8098-c18229e5026e&md5=92dd1dd18c29ac397054ac07ca08135d)
+[http://tester.litres.ru/partner\_user\_purchases\_a\_book/?user=2&art=65930123-26b8-4b07-8098-c18229e5026e&md5=92dd1dd18c29ac397054ac07ca08135d](http://tester.litres.ru/partner_user_purchases_a_book/?user=2&art=65930123-26b8-4b07-8098-c18229e5026e&md5=92dd1dd18c29ac397054ac07ca08135d)
 
 -   Валидный (но просроченный) URL для пользователя на скачку книги в
     формате PDF:
@@ -1980,20 +1972,13 @@ tester.litres.ru, а также секретный ключ
 
     1.  ### Ознакомительные фрагменты для текстовых книг {.western lang="ru-RU"}
 
-Для большинства книг, проходящих в партнерском XML, можно получить с
-сервера ЛитРес ознакомительный фрагмент (только в форматах fb2.zip,
-a4.pdf, a6.pdf, ePub, rtf.zip, txt, txt.zip). О том, доступен ли для
-книги ознакомительный фрагмент, смотрите атрибут
-**updated****-****book****/@has\_trial** (раздел 5). Запрос к
-ознакомительному фрагменту выглядит так:
+Для всех книг в форматах fb2.zip, a4.pdf, a6.pdf, ePub, rtf.zip, txt,
+txt.zip можно получить с сервера ЛитРес ознакомительный фрагмент. Запрос
+к ознакомительному фрагменту выглядит так:
 
 [http://partnersdnld.litres.ru/static/trials/00/12/34/00123456.fb2.zip](http://www.litres.ru/static/trials/00/12/34/00123456.fb2.zip),
 где 123456 – ID книги (**updated-book/@****id**), a вместо fb2.zip можно
 поставить другое расширение.
-
-Партнерам следует иметь в виду, что ознакомительные фрагменты необходимо
-немедленно снимать с доступа, если книга прошла в ленте новинок (см.
-1.1.2) с **updated****-****book****/@has\_trial** установленным в 0.
 
 2.  ### Ознакомительные фрагменты для PDF-книг {.western lang="ru-RU"}
 
@@ -2150,5 +2135,5 @@ http://www.timestampgenerator.com/. Обратите внимание, что в
 огромное количество исходников для любого языка, от Perl до PL/SQL.
 
 ![Группа
-33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAAB90lEQVR4nO3bvWsTcRzH8fvdk+eROjloKhokppBB0XZTh+DiIKhLR5X6gAraqZ0s0rF0qCi10KEqiIsWhArtf+DDIAilEUIGQWIpSJFwpV5y9/NuM40Fz8txKb5f0/GB75fv9uGGny6lVAAACHmet7tcLo+oqvozylzQJSLQ8ULxfd/M5XIvMplMtdO7Q3oSSwEAO1O9Xs8HBejm8/nZKHNJlaDjOAdrtdrZQqEw3endIUoQANDCMIwfpmmup31HqNFo9ATl6ie1nxIEAPy3KEEAQGwbK3N99ycWRt5/Wjt2dPzVowfn9z93V+aObM2C0knsr+5fUIIAgJhcsb5x0hh7MnTb/vKwtzT05vHqucvzoi27Pn9AU5y0r/0dJQgAiMmUvQN9y+FXU+5SDpf6P+zVzE2rLVM2072zHSUIAOgM/7v+dtE/devu8VlLUbxtsy5CCQIA4pOO+nlhqeReuPbu9J7mt4ZvaIZwZFumdlcR6o7j5CqVys20DwEApC98J5jNZpciDcm69nFy8Mal1+qVwr6XtSltwB1/OjwspgcvtmTP7t3pt5W1KKs1TXOr1erVoKsORbrpL+m2bX8tFosTSSwHAOw84TvBSAOixzsxujizPKrMtOR/yiKyLGv1TEBKqcbZsx1dCNHslkeRAABsFbmUI/gFSFHAUVmlc+AAAAAASUVORK5CYII=)\
+33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAACFklEQVR4nO3bT0gUYRgG8G+++WYah7UgImxXcqlhhT30TztVh8WDKwh16hKEaEUFdlMIivAoHQojBQ9pEEVkkCjoyWt/DkFgTrTMIahxiUpkmcVmd+ZrvqNC4LSzzErP7zTD8r48t4dheRnnnAAAAAie5zWZpjlEKf0dZi7oEikQeaH4vq+m0+mniUTCinq3wOqxFAAAdqZSqWQEBegahjEZZq5eJeg4zkHbtvOZTOZh1LsFlCAAAGyiKMq6qqprcecQKpVKc1Cufr32owQBAOC/hRIEAICalVcetd8ZnRt6++H70SMjMw/unz3whPEysWZv5gee5y/MPuvp2xN82MWdcyuUIAAA1MiV1sqnlNtT/df1L2OpXP/8eLH38stWWXfajhkrdLqqxJ3wb1CCAABQI5WnOtuXxVOV7yKHch3v9slkQ7xLlHFKSMOeIaAEAQAgGv5P9nrBP33txvFJjRAv7jjbgRIEAIDacYd+mlvMuecuvTmzu7pa8RVZoY1fhMxxnHShULgadxAAAIifuBNMJpOLoYZ4SX5/9/yVi69oX6blhX1P7nRHHt8a7Gja+FE0zcOr9nrr5189+0/uZd/C5pFl2bUsayDoqraws9vBdF3/ms1mR+uxHAAAdh5xJxhqQGr2TgwvTCwPk4nNP2gk1T229LGbLP1rFk3Til0BzsVfi9FjkiRVG+UoEgAAYKvQpRzCH4RbouKjr2yhAAAAAElFTkSuQmCC)\
 
