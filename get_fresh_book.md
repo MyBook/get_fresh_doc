@@ -197,8 +197,8 @@
 Параметры запроса (все параметры являются обязательными, если не
 обозначено обратное):
 
--   **checkpoint** – время в формате ISO (например, 2015-11-05
-    14:48:53), с которого следует забирать новинки. Вы получите список
+-   **checkpoint** – время в формате ISO (например, 2015-12-04
+    12:19:19), с которого следует забирать новинки. Вы получите список
     новинок со временем большим или равным **checkpoint** и меньшим
     **/****fb****-****updates****/@****timestamp** (см. описание XML
     ниже). Если вы хотите получать непрерывную ленту новинок, сохраняйте
@@ -2135,5 +2135,5 @@ http://www.timestampgenerator.com/. Обратите внимание, что в
 огромное количество исходников для любого языка, от Perl до PL/SQL.
 
 ![Группа
-33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAACFklEQVR4nO3bT0gUYRgG8G+++WYah7UgImxXcqlhhT30TztVh8WDKwh16hKEaEUFdlMIivAoHQojBQ9pEEVkkCjoyWt/DkFgTrTMIahxiUpkmcVmd+ZrvqNC4LSzzErP7zTD8r48t4dheRnnnAAAAAie5zWZpjlEKf0dZi7oEikQeaH4vq+m0+mniUTCinq3wOqxFAAAdqZSqWQEBegahjEZZq5eJeg4zkHbtvOZTOZh1LsFlCAAAGyiKMq6qqprcecQKpVKc1Cufr32owQBAOC/hRIEAICalVcetd8ZnRt6++H70SMjMw/unz3whPEysWZv5gee5y/MPuvp2xN82MWdcyuUIAAA1MiV1sqnlNtT/df1L2OpXP/8eLH38stWWXfajhkrdLqqxJ3wb1CCAABQI5WnOtuXxVOV7yKHch3v9slkQ7xLlHFKSMOeIaAEAQAgGv5P9nrBP33txvFJjRAv7jjbgRIEAIDacYd+mlvMuecuvTmzu7pa8RVZoY1fhMxxnHShULgadxAAAIifuBNMJpOLoYZ4SX5/9/yVi69oX6blhX1P7nRHHt8a7Gja+FE0zcOr9nrr5189+0/uZd/C5pFl2bUsayDoqraws9vBdF3/ms1mR+uxHAAAdh5xJxhqQGr2TgwvTCwPk4nNP2gk1T229LGbLP1rFk3Til0BzsVfi9FjkiRVG+UoEgAAYKvQpRzCH4RbouKjr2yhAAAAAElFTkSuQmCC)\
+33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAABNklEQVR4nO3boW6DQByA8ZXAS2zBT2yZ7wtg2RAkoBYEmonuGTrR6okFBcnEAMsLzBMQ9aS8xBJuOYHrkmb0Qkm/nzlygvzdF8idLoS4AgBgkKbp2YXB87yFivfqKl4KAJg3VdH5D5VRJoIAgItFBAEAo5VlaQVB8GEYxk+SJP5yufyW+6Zptvv9/qbve23qGQ8hggCA0aqqetjtdrebzeYlDMP3uq7v5X7btqamaf3U8/2FCAIARlutVm9yjaJou16vX6ee51hEEABwMl3XXdu2XUw9x7GIIADgJIQQiziOn4evwjkgggCA0WQA8zx/dF330/f9pGmau6lnOoZ+jpciAQDz4jjOV1EUtny2LKsc9odDMXIdc0JUVav0c7oQCQCYpyzLng7tn+JqhMpO8TsUAHCxfgFpWF+mztKiGwAAAABJRU5ErkJggg==)\
 
