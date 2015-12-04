@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DOC_URL=http://www.litres.ru/static/get_fresh_book.zip
+TMP_DIR=tmp
+TMP_FILE=get_fresh_book.zip
+
+mkdir -p "$TMP_DIR"
+
+{
+    curl -# $DOC_URL > $TMP_FILE
+    unzip -d $TMP_DIR $TMP_FILE
+    mv tmp/$(ls -1 tmp/ | head -n 1) get_fresh_book.doc
+    unoconv -f html get_fresh_book.doc
+    pandoc -f html -t markdown -o get_fresh_book.md get_fresh_book.html
+} || {
+    echo "Failed to fetch the fresh doc"
+}
+
+rm -f "$TMP_FILE" || true
+rm -rf "$TMP_DIR"
+
