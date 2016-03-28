@@ -2,9 +2,9 @@
 
 **к книжному магазину ЛитРес**
 
-Версия документа: 1.88
+Версия документа: 1.90
 
-Дата последнего обновления: 15 октября 2015 г.
+Дата последнего обновления: 26 февраля 2016 г.
 
 Ответственные: Грибов Дмитрий
 ([admin@litres.ru](mailto:admin@litres.ru)) и Пономаренко Илья
@@ -45,54 +45,54 @@
 Содержание {.western lang="ru-RU"}
 ----------
 
-[1.1.1. Формат запроса 4](#__RefHeading___Toc425961417)
+[1.1.1. Формат запроса 4](#__RefHeading___Toc444266796)
 
-[1.1.2. Формат ответа сервера 5](#__RefHeading___Toc425961418)
+[1.1.2. Формат ответа сервера 5](#__RefHeading___Toc444266797)
 
-[2.1.1. Формат запроса 17](#__RefHeading___Toc425961420)
+[2.1.1. Формат запроса 17](#__RefHeading___Toc444266799)
 
-[2.1.2. Формат ответа сервера 17](#__RefHeading___Toc425961421)
+[2.1.2. Формат ответа сервера 17](#__RefHeading___Toc444266800)
 
 [3.1.1. Формат запроса к серверу партнера
-18](#__RefHeading___Toc425961423)
+18](#__RefHeading___Toc444266802)
 
-[3.1.2. Формат ответа сервера партнера 18](#__RefHeading___Toc425961424)
+[3.1.2. Формат ответа сервера партнера 18](#__RefHeading___Toc444266803)
 
 [4.1.1. Формат запроса-уведомления от партнера о продаже
-20](#__RefHeading___Toc425961426)
+20](#__RefHeading___Toc444266805)
 
 [4.1.2. Формат ответа сервера на запрос-уведомление
-21](#__RefHeading___Toc425961427)
+21](#__RefHeading___Toc444266806)
 
 [4.1.3. Формат URL на скачку книг для пользователей партнера
-22](#__RefHeading___Toc425961428)
+22](#__RefHeading___Toc444266807)
 
 [4.1.4. Скачивание текстовых книг (тип 0)
-22](#__RefHeading___Toc425961429)
+22](#__RefHeading___Toc444266808)
 
 [4.1.5. Скачивание книг на английском языке Adobe DRM (тип 11)
-24](#__RefHeading___Toc425961430)
+24](#__RefHeading___Toc444266809)
 
 [4.1.6. Скачивание мультимедиа-контента (все типы, кроме 0 и 11)
-24](#__RefHeading___Toc425961431)
+24](#__RefHeading___Toc444266810)
 
 [4.1.7. Время жизни ссылок, число скачиваний
-25](#__RefHeading___Toc425961432)
+25](#__RefHeading___Toc444266811)
 
 [4.1.8. Перенаправления пользователя при ошибках
-25](#__RefHeading___Toc425961433)
+25](#__RefHeading___Toc444266812)
 
 [4.1.9. Тестирование интерфейса уведомлений
-26](#__RefHeading___Toc425961434)
+26](#__RefHeading___Toc444266813)
 
 [6.1.1. Ознакомительные фрагменты для текстовых книг
-28](#__RefHeading___Toc425961437)
+28](#__RefHeading___Toc444266816)
 
 [6.1.2. Ознакомительные фрагменты для PDF-книг
-28](#__RefHeading___Toc425961438)
+28](#__RefHeading___Toc444266817)
 
 [6.1.3. Ознакомительные фрагменты для аудио-книг
-28](#__RefHeading___Toc425961439)
+28](#__RefHeading___Toc444266818)
 
 \
 
@@ -188,7 +188,8 @@
 Протестировать процесс загрузки списка обновлений, а также разобраться в
 принципах формирования запросов к API вы можете с помощью тестового
 файла
-[http://www.litres.ru/static/get\_fresh\_book\_tester.html](http://www.litres.ru/static/get_fresh_book_tester.html).
+[http://www.litres.ru/static/get\_fresh\_book\_tester.html](http://www.litres.ru/static/get_fresh_book_tester.html)
+(см. исходный код этой страницы).
 
 \
 
@@ -197,8 +198,8 @@
 Параметры запроса (все параметры являются обязательными, если не
 обозначено обратное):
 
--   **checkpoint** – время в формате ISO (например, 2015-12-04
-    12:19:19), с которого следует забирать новинки. Вы получите список
+-   **checkpoint** – время в формате ISO (например, 2016-03-28
+    12:30:46), с которого следует забирать новинки. Вы получите список
     новинок со временем большим или равным **checkpoint** и меньшим
     **/****fb****-****updates****/@****timestamp** (см. описание XML
     ниже). Если вы хотите получать непрерывную ленту новинок, сохраняйте
@@ -281,9 +282,11 @@ print "\\n\\nGood SHA is:
 \
 
 Пример корректного запроса списка новинок (не забудьте изменить
-**sheckpoint**, **timestamp** и **sha** на актуальные значения):
+**checkpoint**, **timestamp** и **sha** на актуальные значения):
 
-[http://partnersdnld.litres.ru/get\_fresh\_book/?checkpoint=2015-10-08%2000:00&place=TEST](http://www.litres.ru/get_fresh_book/?checkpoint=2015-10-08%2000:00&place=TEST%20)&timestamp=1444248000&sha=08d232a196a941a59991c8509d23bd9dd1b5cf1965fb7556258bd6e7d340c3f3
+[http://partnersdnld.litres.ru/get\_fresh\_book/?checkpoint=2015-10-08%2000:00:00&place=TEST&timestamp=1444248000&sha=08d232a196a941a59991c8509d23bd9dd1b5cf1965fb7556258bd6e7d340c3f3](http://partnersdnld.litres.ru/get_fresh_book/?checkpoint=2015-10-08%2000:00:00&place=TEST&timestamp=1444248000&sha=08d232a196a941a59991c8509d23bd9dd1b5cf1965fb7556258bd6e7d340c3f3)
+
+\
 
 2.  ### Формат ответа сервера {.western lang="ru-RU"}
 
@@ -347,8 +350,6 @@ date\_written\_s="2008" date\_written\_d="2008-08-05"\>
 \<file size="80859" type="rb"/\>
 
 \<file size="212769" type="mobi.prc"/\>
-
-\<file size="98315" type="lrf"/\>
 
 \<file size="465828" type="epub"/\>
 
@@ -1197,8 +1198,6 @@ removed="2008-07-08 13:34:13"/\>
 
     -   txt;
 
-    -   lrf;
-
     -   isilo3.pdb;
 
     -   lit;
@@ -1311,8 +1310,6 @@ removed="2008-07-08 13:34:13"/\>
     -   mobi.prc;
 
     -   txt;
-
-    -   lrf;
 
     -   isilo3.pdb;
 
@@ -1685,8 +1682,6 @@ time="2008-09-02 08:50" pay-id="568" currency="RUR"/\>
 
     -   **.****epub** – ePub, новый перспективный формат электронных
         книг, разработанный Adobe;
-
-    -   **lrf******– формат, который поддерживают Sony Reader-ы;
 
     -   **mobi****.****prc** – файлы для моби-ридера. В данный момент
         особенно примечательны тем, что работают на Amazon Kindle, хотя
@@ -2135,5 +2130,5 @@ http://www.timestampgenerator.com/. Обратите внимание, что в
 огромное количество исходников для любого языка, от Perl до PL/SQL.
 
 ![Группа
-33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAABNklEQVR4nO3boW6DQByA8ZXAS2zBT2yZ7wtg2RAkoBYEmonuGTrR6okFBcnEAMsLzBMQ9aS8xBJuOYHrkmb0Qkm/nzlygvzdF8idLoS4AgBgkKbp2YXB87yFivfqKl4KAJg3VdH5D5VRJoIAgItFBAEAo5VlaQVB8GEYxk+SJP5yufyW+6Zptvv9/qbve23qGQ8hggCA0aqqetjtdrebzeYlDMP3uq7v5X7btqamaf3U8/2FCAIARlutVm9yjaJou16vX6ee51hEEABwMl3XXdu2XUw9x7GIIADgJIQQiziOn4evwjkgggCA0WQA8zx/dF330/f9pGmau6lnOoZ+jpciAQDz4jjOV1EUtny2LKsc9odDMXIdc0JUVav0c7oQCQCYpyzLng7tn+JqhMpO8TsUAHCxfgFpWF+mztKiGwAAAABJRU5ErkJggg==)\
+33](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcEAAAAMCAYAAAAaugY2AAAACXBIWXMAAA7AAAAPKwHWnskZAAABFklEQVR4nO3bIYuEQBiA4T1QDiybFrzi/YeD7ZtMF2yCfasgGI0XDw6u2gWbwXTJLvgf3OKCyXIgBg+DVeGYYZR9HxAmDV97YcbRxnE8AAAwS5Jkc2HwPO9Jxr6ajE0BAPsmKzr/ITPKRBAA8LCIIABAqLquX33f/y6K4tJ13VH1PEuIIABAmKZpXmzb/gmC4CuO46vqedYQQQCAMFEUfRiG8RuG4adpmnfHcTLVMy0hggAAYfI8fy/L8lxV1Zvrumnf98+qZ1pCBAEAwrRte7Is6zZ9wzDoqudZQwQBAMLouj5kWebMa9XzrNG2+CgSALBPaZq60zHovBa1r6xWaVt6EAkA2LfpRxjR94AyO8VxKADgYf0B5ExROi7iVSkAAAAASUVORK5CYII=)\
 
